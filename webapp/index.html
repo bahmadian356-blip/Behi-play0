@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>BEHI PLAY</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand">🎮 BEHI PLAY</div>
+    <div class="xp-chip" id="xpChip">Lv. 1 · 0 XP</div>
+  </header>
+
+  <!-- Home -->
+  <section id="view-home" class="view active">
+    <div class="hero-card">
+      <div class="avatar" id="avatar">👤</div>
+      <div class="hero-info">
+        <div class="hero-name" id="heroName">در حال بارگذاری...</div>
+        <div class="progress-bar"><div class="progress-fill" id="xpFill"></div></div>
+        <div class="hero-sub" id="xpSub">0 / 100 XP</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <button class="tile" data-nav="games">
+        <span class="tile-icon">🎮</span>
+        <span>بازی‌ها</span>
+      </button>
+      <button class="tile" data-nav="compete">
+        <span class="tile-icon">🏆</span>
+        <span>مسابقه با دوستان</span>
+      </button>
+      <button class="tile" data-nav="leaderboard">
+        <span class="tile-icon">📊</span>
+        <span>رتبه‌بندی</span>
+      </button>
+      <button class="tile" data-nav="profile">
+        <span class="tile-icon">⭐</span>
+        <span>پروفایل</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Games list -->
+  <section id="view-games" class="view">
+    <h2 class="section-title">🎮 بازی‌ها</h2>
+    <div class="card game-card">
+      <div class="game-card-title">Quiz Battle</div>
+      <div class="game-card-desc">سوالات چندگزینه‌ای، تایمر، امتیازدهی زنده.</div>
+      <button class="btn primary" id="btnCreateGame">ساخت اتاق جدید</button>
+    </div>
+  </section>
+
+  <!-- Compete / room -->
+  <section id="view-compete" class="view">
+    <h2 class="section-title">🏆 مسابقه با دوستان</h2>
+    <div id="roomEmpty" class="card">
+      <p>هنوز اتاقی نساختی. از بخش «بازی‌ها» یک اتاق بساز یا با لینک دعوت یک دوست وارد شو.</p>
+    </div>
+    <div id="roomActive" class="card hidden">
+      <div class="room-name" id="roomName">—</div>
+      <div class="room-players" id="roomPlayers"></div>
+      <button class="btn secondary" id="btnCopyInvite">کپی لینک دعوت</button>
+      <button class="btn primary hidden" id="btnStartGame">شروع بازی</button>
+    </div>
+  </section>
+
+  <!-- Quiz play -->
+  <section id="view-quiz" class="view">
+    <div class="quiz-header">
+      <div id="quizTimer" class="timer">15</div>
+      <div id="quizProgress" class="quiz-progress">سوال ۱ از ۵</div>
+    </div>
+    <div class="card">
+      <div id="quizQuestion" class="quiz-question">در حال بارگذاری سوال...</div>
+      <div id="quizOptions" class="quiz-options"></div>
+    </div>
+  </section>
+
+  <!-- Leaderboard -->
+  <section id="view-leaderboard" class="view">
+    <h2 class="section-title">📊 رتبه‌بندی</h2>
+    <ol id="leaderboardList" class="leaderboard-list"></ol>
+  </section>
+
+  <!-- Profile -->
+  <section id="view-profile" class="view">
+    <h2 class="section-title">👤 پروفایل من</h2>
+    <div class="card profile-card" id="profileCard">در حال بارگذاری...</div>
+  </section>
+
+  <!-- Bottom nav -->
+  <nav class="bottombar">
+    <button class="nav-btn active" data-nav="home">🏠</button>
+    <button class="nav-btn" data-nav="games">🎮</button>
+    <button class="nav-btn" data-nav="compete">🏆</button>
+    <button class="nav-btn" data-nav="leaderboard">📊</button>
+    <button class="nav-btn" data-nav="profile">👤</button>
+  </nav>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
