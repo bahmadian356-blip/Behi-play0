@@ -3,6 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 
 from bot.config import TELEGRAM_BOT_TOKEN
 from bot import handlers
+from bot.keepalive import start_keepalive_server
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -24,4 +25,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    mainstart_keepalive_server()
